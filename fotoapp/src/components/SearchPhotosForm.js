@@ -1,8 +1,21 @@
 export const SearchPhotosForm = () => {
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         try {
             event.preventDefault();
-            console.log("hola")
+          
+          const query = event.target.elements.search.value;
+
+          const res = await  fetch(`https://api.pexels.com/v1/search?query=${query}&locale=es-ES&per_page=80`,
+            {
+                headers: {
+                    Authorization: process.env.REACT_APP_API_KEY,
+                },
+            }
+           );
+
+
+            const results = await res.json()
+            console.log(results);
         } catch(error) {
             console.error(error.message);
         }
