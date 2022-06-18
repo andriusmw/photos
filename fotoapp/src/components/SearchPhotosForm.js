@@ -1,4 +1,4 @@
-export const SearchPhotosForm = () => {
+export const SearchPhotosForm = ({setSearchResults2}) => {
     const handleSubmit = async (event) => {
         try {
             event.preventDefault();
@@ -16,6 +16,8 @@ export const SearchPhotosForm = () => {
 
             const results = await res.json()
             console.log(results);
+            setSearchResults2(results.photos)//cambia el estado con los resultados de la búsqueda
+
         } catch(error) {
             console.error(error.message);
         }
