@@ -10,7 +10,7 @@ const [SearchResults2, setSearchResults2] = useState([]);
         <section id="search-photos" >
             <h2>SearchPhotos</h2>
 
-            <SearchPhotosForm setSearchResults={setSearchResults2} />  
+            <SearchPhotosForm setSearchResults2={setSearchResults2} />  
            <SearchResults photos={SearchResults2} />
         </section>
     )

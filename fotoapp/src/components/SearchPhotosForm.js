@@ -13,10 +13,10 @@ export const SearchPhotosForm = ({setSearchResults2}) => {
             }
            );
 
-
+            console.log(res)
             const results = await res.json()
             console.log(results);
-            setSearchResults2(results.photos)//cambia el estado con los resultados de la búsqueda
+            setSearchResults2(results.photos) //cambia el estado con los resultados de la búsqueda
 
         } catch(error) {
             console.error(error.message);
