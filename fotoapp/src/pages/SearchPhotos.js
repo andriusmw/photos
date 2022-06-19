@@ -3,7 +3,7 @@ import { SearchPhotosForm } from "../components/SearchPhotosForm"
 import { SearchResults } from "../components/SearchResults"
 
 
-export const SearchPhotos = () => {
+export const SearchPhotos = ({addToFavorites}) => {
 const [SearchResults2, setSearchResults2] = useState([]);
 
     return (
@@ -11,7 +11,7 @@ const [SearchResults2, setSearchResults2] = useState([]);
             <h2>SearchPhotos</h2>
 
             <SearchPhotosForm setSearchResults2={setSearchResults2} />  
-           <SearchResults photos={SearchResults2} />
+           <SearchResults photos={SearchResults2} addToFavorites={addToFavorites} />
         </section>
     )
 }

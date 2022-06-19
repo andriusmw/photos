@@ -1,8 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
 import {SearchPhotos} from "./pages/SearchPhotos"
+import { useState } from 'react';
 
 function App() {
+  const [favorites, setFavorites] = useState([]);
+
+  console.log(favorites)  ;
+  const addToFavorites = (photo) => {
+    setFavorites([...favorites, photo]);  
+}
+
+
+
   return (
     <div className="App">
       <header>
@@ -15,7 +25,7 @@ function App() {
         </nav>
       </header>
       <main>
-          <SearchPhotos></SearchPhotos>
+          <SearchPhotos addToFavorites={addToFavorites} ></SearchPhotos>
       </main>
       <footer>
         <p>Hack a Boss 2022@</p>

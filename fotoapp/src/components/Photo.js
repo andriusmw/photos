@@ -1,11 +1,15 @@
 
 
 
-export const Photo = ({photo}) => {
+export const Photo = ({photo, addToFavorites}) => {
+
+
     return (
         <>
             <img src={photo.src.small} alt="resultado búsqueda" />
-            <button>Add to favorites</button>
+            <button onClick={() => {
+                addToFavorites(photo);
+            }} >Add to favorites</button>
         </>
     )
 }
