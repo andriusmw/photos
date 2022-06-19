@@ -1,6 +1,6 @@
 import {useState} from "react"
 import { SearchPhotosForm } from "../components/SearchPhotosForm"
-import { SearchResults } from "../components/SearchResults"
+import { PhotosList} from "../components/PhotosList"
 
 
 export const SearchPhotos = ({addToFavorites}) => {
@@ -11,7 +11,8 @@ const [SearchResults2, setSearchResults2] = useState([]);
             <h2>SearchPhotos</h2>
 
             <SearchPhotosForm setSearchResults2={setSearchResults2} />  
-           <SearchResults photos={SearchResults2} addToFavorites={addToFavorites} />
+
+            {SearchResults2.length ? <PhotosList photos={SearchResults2} addToFavorites={addToFavorites} /> : <p>No hay resultados</p> }
         </section>
     )
 }

@@ -23,6 +23,11 @@ useEffect(() => {
     setFavorites([...favorites, photo]);  
 }
 
+  const removeFromFavorites = (photoToRemove) => {
+    const favoritesFiltered = favorites.filter(
+      (photo) => photo.id !== photoToRemove);
+      setFavorites(favoritesFiltered)
+  }
 
 
   return (
@@ -43,7 +48,7 @@ useEffect(() => {
       </header>
       <main>
          {showingPage === "search-photos" && ( <SearchPhotos addToFavorites={addToFavorites} /> )}
-         {showingPage === "my-photos" && (  <MyPhotos  favorites={favorites} /> )}
+         {showingPage === "my-photos" && (  <MyPhotos  favorites={favorites} removeFromFavorites={removeFromFavorites} /> )}
          
       </main>
       <footer>
