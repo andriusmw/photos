@@ -1,12 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
 import {SearchPhotos} from "./pages/SearchPhotos"
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function App() {
-  const [favorites, setFavorites] = useState([]);
+  const storedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
+  const [favorites, setFavorites] = useState(storedFavorites);
 
-  console.log(favorites)  ;
+  console.log(storedFavorites)  ;
+
+useEffect(() => {
+ localStorage.setItem("favorites", JSON.stringify(favorites));
+ //Guarda en json como texto el estado favorites y lo pasa a localstorage
+
+}, [favorites]);
+
+
+
   const addToFavorites = (photo) => {
     setFavorites([...favorites, photo]);  
 }
