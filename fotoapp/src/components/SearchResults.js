@@ -2,7 +2,7 @@ export const SearchResults = ({photos}) => {
     return (
         <ul className="photos-list" > {photos.map((photo) => {
              return( 
-                    <li>
+                    <li key={photo.id} >
                          <img src={photo.src.small} alt="" />
                     </li>)
     })} </ul>)
