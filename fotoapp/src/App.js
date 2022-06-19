@@ -43,7 +43,7 @@ useEffect(() => {
       </header>
       <main>
          {showingPage === "search-photos" && ( <SearchPhotos addToFavorites={addToFavorites} /> )}
-         {showingPage === "my-photos" && (  <MyPhotos/> )}
+         {showingPage === "my-photos" && (  <MyPhotos  favorites={favorites} /> )}
          
       </main>
       <footer>
